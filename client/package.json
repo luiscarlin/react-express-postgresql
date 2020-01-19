@@ -7,11 +7,19 @@
     "start": "parcel index.html --port 3000 --open",
     "build": "parcel build index.html"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
   "dependencies": {
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.12.4"
+    "husky": "^4.0.10",
+    "parcel-bundler": "^1.12.4",
+    "prettier": "^1.19.1",
+    "pretty-quick": "^2.0.1"
   }
 }
