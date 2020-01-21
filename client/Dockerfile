@@ -1,4 +1,3 @@
-# build environment
 FROM node:11.13.0 as build
 WORKDIR /app
 COPY package.json ./
@@ -7,7 +6,6 @@ RUN yarn install
 COPY . .
 RUN yarn build
 
-# production environment
 FROM nginx:1.16.1-alpine
 RUN rm /etc/nginx/conf.d/default.conf
 COPY --from=build /app/nginx.conf /etc/nginx/conf.d
