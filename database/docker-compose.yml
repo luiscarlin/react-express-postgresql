@@ -1,12 +1,11 @@
 version: "3.1"
 
 services:
-  db:
+  database:
     build: .
     restart: always
     environment:
       POSTGRES_PASSWORD: example
-      POSTGRES_DB: mydb
+      POSTGRES_DB: dbname
     ports:
       - 5432:5432
-`
