@@ -1,8 +1,7 @@
 {
   "name": "client",
   "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
+  "license": "WTFPL",
   "scripts": {
     "start": "parcel index.html --port 3000 --open",
     "build": "parcel build index.html"
