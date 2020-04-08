@@ -1,19 +1,27 @@
 # React Express PostgreSQL
 
-## Start Development
+### Tech Used
 
-1. Start server. See instrutions in `server/README.md`
-2. Start client. See instruction sin `client/README.md`
+- yarn
+- yarn workspaces
+- prettier
+- docker
 
-## Build and Start Production
+## Run Dev
+
+```bash
+git clone git@github.com:luiscarlin/react-express-postgresql.git
+
+cd react-express-postgresql
+
+# install dependeices for all packages in the monorepo
+yarn install
+```
+
+## Build and Start Prod
 
 ```bash
 docker-compose up
 
 # running on localhost:3000
 ```
-
-## Tech Used
-
-- Monorepo
-- Yarn workspaces
