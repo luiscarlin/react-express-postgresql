@@ -9,7 +9,7 @@ const App = () => {
       .then(response => setMessage(response.key))
   })
 
-  return <div>hello, {message}</div>
+  return <div>hello, this is coming from the serer => {message}</div>
 }
 
 export default App

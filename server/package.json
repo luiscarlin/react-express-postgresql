@@ -6,13 +6,7 @@
   "scripts": {
     "start": "nodemon --exec babel-node src/server.js",
     "build": "babel src --out-dir dist",
-    "serve": "node dist/server.js",
-    "lint": "prettier --write 'src/**/*.js'"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged"
-    }
+    "serve": "node dist/server.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
@@ -23,9 +17,6 @@
     "@babel/core": "^7.8.3",
     "@babel/node": "^7.8.3",
     "@babel/preset-env": "^7.8.3",
-    "husky": "^4.0.10",
-    "nodemon": "^2.0.2",
-    "prettier": "^1.19.1",
-    "pretty-quick": "^2.0.1"
+    "nodemon": "^2.0.2"
   }
 }

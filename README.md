@@ -12,3 +12,8 @@ docker-compose up
 
 # running on localhost:3000
 ```
+
+## Tech Used
+
+- Monorepo
+- Yarn workspaces
