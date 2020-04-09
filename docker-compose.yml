@@ -1,17 +1,27 @@
 version: '3.7'
 
 services:
-  pern_fontend:
+  client:
+    container_name: pern_frontend
     build: client
+    depends_on:
+      - backend
+    restart: unless-stopped
     ports:
       - 3000:3000
 
-  pern_backend:
+  backend:
+    container_name: pern_backend
     build: server
+    depends_on:
+      - database
+    links:
+      - database
     ports:
       - 5000:5000
 
-  pern_database:
+  database:
+    container_name: pern_database
     build: database
     restart: always
     volumes:
@@ -22,3 +32,18 @@ services:
       DB_USER: ${DB_USER}
       DB_PASSWORD: ${DB_PASSWORD}
       DB_NAME: ${DB_NAME}
+
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin4@pgadmin.org}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
+    volumes:
+      - pgadmin:/root/.pgadmin
+    ports:
+      - '${PGADMIN_PORT:-5050}:80'
+    restart: unless-stopped
+
+volumes:
+  pgadmin:
