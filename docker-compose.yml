@@ -1,15 +1,24 @@
-version: "3.7"
+version: '3.7'
 
 services:
-  client:
-    container_name: frontend
-    build:
-      context: client
+  pern_fontend:
+    build: client
     ports:
       - 3000:3000
-  server:
-    container_name: backend
-    build:
-      context: server
+
+  pern_backend:
+    build: server
     ports:
       - 5000:5000
+
+  pern_database:
+    build: database
+    restart: always
+    volumes:
+      - ./database/volume:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    environment:
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_NAME: ${DB_NAME}
