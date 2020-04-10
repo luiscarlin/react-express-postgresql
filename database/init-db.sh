@@ -10,6 +10,6 @@ EOSQL
 psql -v ON_ERROR_STOP=1 --username $DB_USER --dbname $DB_NAME <<-EOSQL
     CREATE TABLE person (
       id serial unique primary key,
-      name text,
+      name text
     );
 EOSQL
